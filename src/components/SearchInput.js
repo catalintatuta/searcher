@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import useDebounce from "./useDebounce";
+import useDebounce from "../utils/useDebounce";
 
 const SearchInput = ({fetchBooks}) => {
   const [inputValue, setInputValue] = useState('');

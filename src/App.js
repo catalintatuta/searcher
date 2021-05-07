@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './App.css';
-import SearchInput from "./SearchInput";
+import SearchInput from "./components/SearchInput";
+import BookItem from "./components/BookItem";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -33,7 +34,15 @@ class App extends Component {
       <div className="App">
         <SearchInput fetchBooks={this.fetchBooks}/>
         {booksList && booksList.map(book => (
-          <p key={book.id} style={{marginTop: '15px'}}>{book.volumeInfo.title}</p>
+          <BookItem
+            key={book.id}
+            style={{marginTop: '15px'}}
+            image={book?.volumeInfo?.imageLinks?.smallThumbnail}
+            title={book?.volumeInfo?.title}
+            authors={book?.volumeInfo?.authors ?? []}
+            year={book?.volumeInfo?.publishedDate}
+            description={book?.volumeInfo?.description}
+          />
         ))}
       </div>
     );
