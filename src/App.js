@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import './App.css';
 import SearchInput from "./SearchInput";
 
-const API_KEY = "";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 class App extends Component {
   constructor(props) {
