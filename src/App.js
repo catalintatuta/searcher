@@ -1,9 +1,17 @@
 import React, {Component} from "react";
-import './App.css';
+import styled from "@emotion/styled";
+
 import SearchInput from "./components/SearchInput";
 import BookItem from "./components/BookItem";
+import theme from "./constants/theme";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
+
+const AppRoot = styled.div`
+  background-color: ${theme.gray};
+  min-height: 100vh;
+  text-align: center;
+`
 
 class App extends Component {
   constructor(props) {
@@ -31,20 +39,20 @@ class App extends Component {
   render() {
     const {booksList} = this.state;
     return (
-      <div className="App">
+      <AppRoot >
         <SearchInput fetchBooks={this.fetchBooks}/>
         {booksList && booksList.map(book => (
           <BookItem
             key={book.id}
-            style={{marginTop: '15px'}}
             image={book?.volumeInfo?.imageLinks?.smallThumbnail}
             title={book?.volumeInfo?.title}
             authors={book?.volumeInfo?.authors ?? []}
             year={book?.volumeInfo?.publishedDate}
             description={book?.volumeInfo?.description}
+            url={book?.accessInfo?.webReaderLink}
           />
         ))}
-      </div>
+      </AppRoot>
     );
   }
 }

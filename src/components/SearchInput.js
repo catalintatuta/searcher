@@ -1,4 +1,7 @@
-import React, {useEffect, useState} from 'react';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { css, jsx } from '@emotion/react'
+import {useEffect, useState} from 'react';
 import useDebounce from "../utils/useDebounce";
 
 const SearchInput = ({fetchBooks}) => {
@@ -16,6 +19,10 @@ const SearchInput = ({fetchBooks}) => {
       type="text"
       onChange={e => setInputValue(e.target.value)}
       value={inputValue}
+      css={css`
+        height: 25px;
+        font-size: 20px;
+      `}
     />
   );
 };
