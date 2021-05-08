@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Before using it, create an .env file with 
+Before using it, create an .env file in the root directory with 
 
 ### `REACT_APP_API_KEY=<your google books api key>`
 
