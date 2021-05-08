@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 import StyledImage from "./StyledImage";
-import BookTitle from "./BookTitle";
+import {BookTitle} from "./common";
 import theme from "../constants/theme";
 
 const styles = {

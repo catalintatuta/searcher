@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import theme from "../constants/theme";
+import theme from "../../../constants/theme";
 
-const MyTitle = styled.a`
+export const MyTitle = styled.a`
   font-size: 30px;
   font-weight: bold;
   text-align: left;
@@ -18,17 +18,3 @@ const MyTitle = styled.a`
   }
 `
 
-
-const BookTitle = ({url, children}) => {
-  return (
-    <MyTitle
-      href={url}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {children}
-    </MyTitle>
-  );
-};
-
-export default BookTitle;

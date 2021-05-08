@@ -21,7 +21,8 @@ const SearchInput = ({fetchBooks}) => {
       value={inputValue}
       css={css`
         height: 25px;
-        font-size: 20px;
+        font-size: 25px;
+        margin: 30px 0;
       `}
     />
   );
